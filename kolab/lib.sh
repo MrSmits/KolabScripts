@@ -44,6 +44,10 @@ function DetermineOS
     then
       export OS=Ubuntu_16.04
       export RELEASE=1604
+    elif [ $DISTRIB_ID == "Ubuntu" -a $DISTRIB_CODENAME == "bionic" ]
+    then
+      export OS=Ubuntu_18.04
+      export RELEASE=1804
     fi
   elif [ -f /etc/debian_version ]
   then
