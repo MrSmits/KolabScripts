@@ -31,6 +31,9 @@ then
 elif [[ $OBS_repo_OS == "Ubuntu_16.04" ]]
 then
   LBS_repo_OS="ubuntu/xenial xenial"
+elif [[ $OBS_repo_OS == "Ubuntu_18.04" ]]
+then
+  LBS_repo_OS="ubuntu/bionic bionic"
 fi
 
 if [ -z `hostname -f | awk -F "." '{ print $2 }'` ]
@@ -145,4 +148,4 @@ then
   apt-get -y install -t jessie apache2 || exit 1
 fi
 
-aptitude -y install kolab kolab-freebusy php5-imap || exit 1
+aptitude -y install kolab kolab-freebusy php-imap || exit 1
